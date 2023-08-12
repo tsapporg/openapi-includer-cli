@@ -7,7 +7,7 @@ info:
 servers:
 - url: "{url}"
   variables:
-    apiGatewayUrl:
+    apiURL:
       default: ''
 
 paths:
