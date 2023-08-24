@@ -17,8 +17,14 @@
     "yaml": "2.3.1"
   },
   "devDependencies": {
-    "@types/node": "18.7.17",
+    "@types/node": "18.11.18",
+    "concurrently": "7.5.0",
+    "cross-env": "5.2.1",
+    "del": "5.0.0",
+    "nodemon": "2.0.20",
+    "onchange": "7.1.0",
     "openapi-typescript": "6.2.8",
+    "shx": "0.3.4",
     "ts-node": "10.9.1",
     "tslib": "2.4.0",
     "typescript": "4.8.4"
