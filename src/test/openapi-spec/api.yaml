@@ -11,12 +11,14 @@ servers:
       default: ''
 
 paths:
-  /model3:
-    get:
-      $ref: ./api.model3.get.yaml
   $includes:
     - ./paths1.yaml
     - ./paths2.yaml
+    - ../paths3.yaml
+    - /tmp/paths4.yaml
+  /model5:
+    get:
+      $ref: ./api.model5.get.yaml
 
 security:
   - bearerAuth: []
@@ -30,8 +32,10 @@ components:
     bearerFormat: JWT
   
   schemas:
-    Model3:
-      $ref: ./schema.model3.yaml
     $includes:
       - ./schemas1.yaml
       - ./schemas2.yaml
+      - ../schemas3.yaml
+      - /tmp/schemas4.yaml
+    Model5:
+      $ref: ./schema.model5.yaml

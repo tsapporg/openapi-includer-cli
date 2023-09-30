@@ -1,0 +1,6 @@
+type: object
+properties:
+  prop5: 
+    type: string
+required:
+  - prop5

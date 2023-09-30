@@ -34,12 +34,16 @@ Include other files in your main OpenAPI definition file:
 			$includes: 
 				- ./paths.shop.yaml
 				- ./paths.admin.yaml
+				- ../../paths.relative.yaml
+				- /home/ubuntu/paths.absolute.yaml
 
-Duplicate routes will be klobbered and the last one wins.
+* Duplicate routes will be klobbered and the last one wins.
+* `$include`d files with `$ref`s will have their relative `$ref`erences replaced for the proper path.
+* Currently `$include`ing files with `$include` keywords does not work - recursion is not supported yet.
 
 ## Usage
 From a terminal, run:
 
-    npx ts-app-org/openapi-includer-cli ./your-openapi-spec.yaml
+    npx ts-app-org/openapi-includer-cli ./dist ./your-openapi-spec.yaml
 
-This generates a `_api.yaml` file in the same directory as your supplied OpenAPI definition file with the included paths.
+This generates a `_api.yaml` file in the "dist" directory. You'll also find copied and modified YAML files in "dist" dircectory.
