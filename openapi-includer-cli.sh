@@ -21,6 +21,12 @@ cwd=$(pwd)
 
 $lib_dir/dist/index-macos $@
 
+if [ "$(uname)" == "Darwin" ]; then
+  $lib_dir/dist/index-macos $@
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  $lib_dir/dist/index-linux $@
+fi
+
 # node --experimental-specifier-resolution=node \
 #   --experimental-modules --no-warnings \
 #   --loader "ts-node/esm/transpile-only" \
