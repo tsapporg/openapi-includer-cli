@@ -1,11 +1,12 @@
 install:
-	if [ -d ../ts-npm ]; then \
-		npm install -g ../ts-npm; \
+	if [ -d ts-npm ]; then \
+		echo "standard npm install"; \
+		npm install; \
 	else \
+		echo "install ts-npm"; \
 		npm install -g tsapporg/ts-npm; \
+		ts-npm --action=install --absolute-path-to-dependencies=$(pwd); \
 	fi;
-
-	ts-npm install
 
 tests:
 	make package/cli -f makefile.shared
@@ -14,7 +15,7 @@ tests:
 	npx shx rm -f ./test/**/out/_api.ts
 	npx shx rm -rf ./test/**/out/_types
 
-	./dist/index-macos \
+	./dist/index-linux-x64 \
 		--absolute-input-openapi-def-path=$(shell pwd)/test/test2/api.yaml \
 		--absolute-output-openapi-def-path=$(shell pwd)/test/test2/out/_api.yaml
 

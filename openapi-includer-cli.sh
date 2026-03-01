@@ -21,10 +21,10 @@ cwd=$(pwd)
 
 $lib_dir/dist/index-macos $@
 
-if [ "$(uname)" == "Darwin" ]; then
-  $lib_dir/dist/index-macos $@
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-  $lib_dir/dist/index-linux $@
+#if [ "$(uname)" == "Darwin" ]; then
+#  $lib_dir/dist/index-macos $@
+if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  $lib_dir/dist/index-linux-x64 $@
 fi
 
 # node --experimental-specifier-resolution=node \

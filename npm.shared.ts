@@ -25,8 +25,9 @@ const npmPackage: any = {
     '@babel/core': '7.23.2',
     '@babel/preset-typescript': '7.23.2',
     '@babel/preset-env': '7.23.2',
-    'pkg': '5.8.1' // Used to create binaries.
-  }
+    //'pkg': '5.8.1', // Used to create binaries. @deprecated
+    'postject': '1.0.0-alpha.6' // Used to create binaries.
+  } 
 }
 
 export default { npmPackage }
