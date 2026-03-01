@@ -19,13 +19,7 @@ cd $cwd
 
 cwd=$(pwd)
 
-$lib_dir/dist/index-macos $@
-
-#if [ "$(uname)" == "Darwin" ]; then
-#  $lib_dir/dist/index-macos $@
-if [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-  $lib_dir/dist/index-linux-x64 $@
-fi
+$lib_dir/dist/index-linux-x64 $@
 
 # node --experimental-specifier-resolution=node \
 #   --experimental-modules --no-warnings \
